@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>分析结果</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>分析结果</h1>
+        <p>正在分析 {{ drug_a }} 和 {{ drug_b }}</p>
+        <table>
+            <tr>
+                <th>属性</th>
+                <th>{{ drug_a }} 赋值</th>
+                <th>{{ drug_b }} 赋值</th>
+                <th>差值</th>
+                <th>影响</th>
+            </tr>
+            {% for column, values in result.items() %}
+            <tr>
+                <td>{{ column }}</td>
+                <td>{{ values.drug_a_value }}</td>
+                <td>{{ values.drug_b_value }}</td>
+                <td>{{ values.difference }}</td>
+                <td>{{ values.impact }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">返回</a>
+    </div>
+</body>
+</html>

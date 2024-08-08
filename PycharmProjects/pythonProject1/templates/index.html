@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>药物相互作用分析</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>药物相互作用分析</h1>
+        <form action="/compare" method="post">
+            <label for="drug_a">药物A:</label>
+            <input type="text" id="drug_a" name="drug_a" required>
+            <br>
+            <label for="drug_b">药物B:</label>
+            <input type="text" id="drug_b" name="drug_b" required>
+            <br>
+            <button type="submit">比较</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
