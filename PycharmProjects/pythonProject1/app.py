@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Load the data
 data = pd.read_excel('data.xlsx')
-
+#111
 
 def get_drug_data(drug_name):
     # Strip leading/trailing whitespace and handle case sensitivity
